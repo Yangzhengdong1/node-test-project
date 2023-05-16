@@ -19,7 +19,7 @@ const connections = mysql.createPool({
 // 测试数据库是否连接成功
 connections.getConnection((error, conn) => {
   conn.connect(err => {
-    if (err) {
+    if ( err ) {
       console.log('连接数据库失败：', err);
     } else {
       console.log('连接数据库成功~');

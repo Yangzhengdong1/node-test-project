@@ -1,11 +1,11 @@
 /**
-* Author: zdyang
-* Date: 2023-05-08 19:09:47
-* LastEditors: zdyang
-* LastEditTime: 2023-05-08 19:26:06
-* FilePath: \NodeJS\coderhub\src\controller\user.controller.js
-* Description: 用户接口相关中间件控制器处理逻辑
-*
+ * Author: zdyang
+ * Date: 2023-05-08 19:09:47
+ * LastEditors: zdyang
+ * LastEditTime: 2023-05-08 19:26:06
+ * FilePath: \NodeJS\coderhub\src\controller\user.controller.js
+ * Description: 用户接口相关中间件控制器处理逻辑
+ *
  */
 
 
