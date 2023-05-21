@@ -1,3 +1,12 @@
+/**
+* Author: zdyang
+* Date: 2023-05-13 11:22:55
+* LastEditors: zdyang
+* LastEditTime: 2023-05-20 20:00:49
+* FilePath: \coderhub\src\controller\auth.controller.js
+* Description: 用户权限相关接口控制器，主要是 token 的颁发与校验
+*
+ */
 const jwt = require('jsonwebtoken');
 const { PRIVATE_KEY } = require('../app/config');
 
