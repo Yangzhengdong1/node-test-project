@@ -8,17 +8,28 @@
 *
  */
 
+const fs = require('fs');
 
-const service = require('../service/user.service');
+const userService = require('../service/user.service');
+const fileService = require('../service/file.service');
+const { AVATAR_PATH } = require('../constants/file-path');
 
 class UserController {
   async register(ctx) {
     // 获取用户传递的参数
     const params = ctx.request.body;
     // 连接数据库查询数据
-    const result = await service.register(params);
+    const result = await userService.register(params);
     // 返回数据
     ctx.body = result;
+  }
+
+  async avatarInfo(ctx) {
+    const { userId } = ctx.params;
+
+    const avatarInfo = await fileService.getAvatarByUserId(userId);
+    ctx.response.set('content-type', avatarInfo.mimetype);
+    ctx.body = fs.createReadStream(`${AVATAR_PATH}/${avatarInfo.filename}`);
   }
 }
 

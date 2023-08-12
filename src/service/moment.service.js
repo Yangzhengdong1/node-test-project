@@ -2,7 +2,7 @@
 * Author: zdyang
 * Date: 2023-05-20 19:34:45
 * LastEditors: zdyang
-* LastEditTime: 2023-05-21 18:38:08
+* LastEditTime: 2023-06-28 20:14:32
 * FilePath: \coderhub\src\service\moment.service.js
 * Description: 主要处理用户动态相关接口与数据库之间的交互逻辑
 *
@@ -20,7 +20,7 @@ class MomentService {
   async getMomentById(id) {
     const statement = `
       SELECT 
-      m.user_id AS id, m.content AS content, JSON_OBJECT('id', u.id, 'name', u.name) AS author
+      m.user_id AS id, m.content AS content, JSON_OBJECT('id', u.id, 'name', u.name, 'avatar_url', u.avatar_url) AS author
       FROM moments AS m LEFT JOIN project_users AS u 
       ON m.user_id = u.id 
       WHERE m.id = ?;
